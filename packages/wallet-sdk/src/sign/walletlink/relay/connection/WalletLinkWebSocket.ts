@@ -94,6 +94,7 @@ export class WalletLinkWebSocket {
             const message = JSON.parse(evt.data) as ServerMessage;
             this.incomingDataListener?.(message);
           } catch {
+            // noop
           }
         }
       };

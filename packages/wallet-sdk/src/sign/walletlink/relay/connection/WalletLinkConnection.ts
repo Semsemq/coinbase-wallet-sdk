@@ -1,6 +1,5 @@
 // Copyright (c) 2018-2023 Coinbase, Inc. <https://www.coinbase.com/>
 
-import { IntNumber } from ':core/type/index.js';
 import { APP_VERSION_KEY, WALLET_USER_NAME_KEY } from '../constants.js';
 import { ClientMessage } from '../type/ClientMessage.js';
 import { ServerMessage, ServerMessageType } from '../type/ServerMessage.js';
@@ -10,6 +9,7 @@ import { Web3Response } from '../type/Web3Response.js';
 import { WalletLinkCipher } from './WalletLinkCipher.js';
 import { WalletLinkHTTP } from './WalletLinkHTTP.js';
 import { ConnectionState, WalletLinkWebSocket } from './WalletLinkWebSocket.js';
+import { IntNumber } from ':core/type/index.js';
 
 const HEARTBEAT_INTERVAL = 10000;
 const REQUEST_TIMEOUT = 60000;
@@ -372,8 +372,6 @@ export class WalletLinkConnection {
     if (linked) this.onceLinked?.();
     this.listener?.linkedUpdated(linked);
   }
-
-
 
   /**
    * Execute once when linked
